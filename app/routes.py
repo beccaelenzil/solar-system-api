@@ -8,7 +8,6 @@ planets_bp = Blueprint("planets", __name__)
 def planets():
     if request.method == "GET":
         name_query = request.args.get("name")
-        print("********name_query", name_query)
         if name_query:
             planets = Planet.query.filter_by(name=name_query)
         else:
